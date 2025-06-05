@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# BudgetNaira
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive personal finance management application built with React, TypeScript, and Node.js.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 1. Dashboard Overview
+- Real-time financial summary
+- Current balance display
+- Monthly income and expense tracking
+- Savings rate monitoring
+- Visual progress indicators for budgets and savings goals
 
-### `npm start`
+### 2. Expense Management
+- Track daily expenses
+- Categorize expenses
+- View expense history
+- Expense analytics and trends
+- Monthly expense summaries
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 3. Budget Planning
+- Create and manage budgets
+- Set spending limits by category
+- Track budget progress
+- Visual budget status indicators
+- Budget vs actual spending comparison
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 4. Savings Goals
+- Set financial goals
+- Track progress towards goals
+- Monthly savings targets
+- Visual progress tracking
+- Goal completion estimates
 
-### `npm test`
+### 5. Financial Calendar & Reminders
+- Bill payment tracking
+- Due date notifications
+- Recurring payment management
+- Custom financial event scheduling
+- Payment history
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 6. Transaction Management
+- Recent transactions list
+- Transaction categorization
+- Search and filter capabilities
+- Transaction history
+- Export functionality
 
-### `npm run build`
+### 7. User Features
+- Secure authentication
+- User profile management
+- Currency preference (NGN)
+- Data privacy and security
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technical Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
+- React with TypeScript
+- Redux for state management
+- Tailwind CSS for styling
+- React Icons for UI elements
+- Date-fns for date manipulation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+- Node.js with Express
+- MongoDB with Mongoose
+- JWT authentication
+- TypeScript for type safety
+- RESTful API architecture
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/budgetnaira.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Install dependencies
+```bash
+# Install backend dependencies
+cd budgetnaira-backend
+npm install
 
-## Learn More
+# Install frontend dependencies
+cd ../budgetnaira-frontend
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Set up environment variables
+```bash
+# Backend (.env)
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=30d
+PORT=5000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Frontend (.env)
+REACT_APP_API_URL=http://localhost:5000/api/v1
+```
+
+4. Start the development servers
+```bash
+# Start backend
+cd budgetnaira-backend
+npm run dev
+
+# Start frontend
+cd ../budgetnaira-frontend
+npm start
+```
+
+## Project Structure
+# BudgetNaira
