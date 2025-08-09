@@ -112,4 +112,15 @@ export const userService = {
   })
 };
 
+// Community Savings Group Service
+export const communitySavingsService = {
+  getUserGroups: () => api.get('/savings-groups'),
+  createGroup: (data: { groupName: string; totalCycles: number; fixedAmount: number; adminSlot: number }) => api.post('/savings-groups', data),
+  joinGroup: (groupId: string, slot: number) => api.post(`/savings-groups/${groupId}/join`, { slot }),
+  contribute: (groupId: string, amount: number) => api.post(`/savings-groups/${groupId}/contribute`, { amount }),
+  getGroup: (groupId: string) => api.get(`/savings-groups/${groupId}`),
+  markPayout: (groupId: string, memberId: string, cycle: number) => api.post(`/savings-groups/${groupId}/payout`, { memberId, cycle }),
+  getNotifications: () => api.get('/notifications'),
+};
+
 export default api;

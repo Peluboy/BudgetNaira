@@ -9,7 +9,8 @@ import {
   Gear,
   Bank,
   Lightbulb,
-  List
+  List,
+  UsersThree
 } from "phosphor-react";
 
 interface SidebarProps {
@@ -30,6 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, closeSidebar }
     { to: "/financial-dashboard", label: "Finance", icon: Bank },
     { to: "/financial-advice", label: "Advisor", icon: Lightbulb },
     { to: "/settings", label: "Settings", icon: Gear },
+    { to: "/community-savings", label: "Ajo/Esusu", icon: UsersThree },
   ];  
 
   return (

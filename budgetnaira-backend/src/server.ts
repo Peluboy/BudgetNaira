@@ -22,6 +22,8 @@ import savingGoalRoutes from './routes/savingGoalRoutes';
 import financialProfileRoutes from './routes/financialProfileRoutes';
 import financialAdviceRoutes from './routes/financialAdviceRoutes';
 import userRoutes from './routes/userRoutes';
+import financialEventsRoutes from './routes/financialEvents';
+import savingsGroupRoutes from './routes/savingsGroupRoutes';
 
 // Load env vars
 dotenv.config();
@@ -74,8 +76,10 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/budgets', budgetRoutes);
 app.use('/api/savings', savingGoalRoutes);
+app.use('/api/savings-groups', savingsGroupRoutes);
 app.use('/api/financial-profile', financialProfileRoutes);
 app.use('/api/financial-advice', financialAdviceRoutes);
+app.use('/api/financial-events', financialEventsRoutes);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 

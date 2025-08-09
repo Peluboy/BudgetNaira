@@ -118,6 +118,25 @@ export interface IUserSettings {
   updatedAt: Date;
 }
 
+export interface ICalculation {
+  id?: string;
+  userId: string;
+  location: string;
+  income: number;
+  categories: {
+    id: string;
+    name: string;
+    items: {
+      id: string;
+      name: string;
+      amount: number;
+      frequency: 'daily' | 'weekly' | 'monthly' | 'yearly';
+    }[];
+  }[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 // Create Dexie database class
 class BudgetNairaDB extends Dexie {
   expenses!: Table<IExpense>;
@@ -126,6 +145,7 @@ class BudgetNairaDB extends Dexie {
   categories!: Table<ICategory>;
   incomes!: Table<IIncome>;
   userSettings!: Table<IUserSettings>;
+  calculations!: Table<ICalculation>;
 
   constructor() {
     super('BudgetNairaDB');
@@ -136,7 +156,8 @@ class BudgetNairaDB extends Dexie {
       savingGoals: '&id, category, isCompleted',
       categories: '&id, type',
       incomes: '&id, source, date, isRecurring',
-      userSettings: '&id'
+      userSettings: '&id',
+      calculations: '&id, userId, location'
     });
   }
 

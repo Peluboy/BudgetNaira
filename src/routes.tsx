@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { initDB } from './services/db';
@@ -19,6 +19,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import SplashScreen from './components/auth/SplashScreen';
+import LandingPage from './pages/LandingPage';
 import FinancialDashboardPage from './pages/FinancialDashboardPage';
 import FinancialAdviceListPage from './components/finance/FinancialAdviceListPage';
 import FinancialAdviceDetailPage from './pages/FinancialAdviceDetailPage';
@@ -27,6 +28,7 @@ import FinancialProfilePage from './pages/FinancialProfilePage';
 import ForgotPasswordPage from './pages/ForgetPassword';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import FinancialDashboard from './components/finance/FinancialDashboard';
+import CommunitySavingsPage from './pages/CommunitySavingsPage';
 // import FinancialAdvice from './pages/FinancialAdvice';
 
 const AppRoutes: React.FC = () => {
@@ -45,10 +47,13 @@ const AppRoutes: React.FC = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
         
-        {/* Protected routes with layout */}
+        {/* Public landing page */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Protected routes with layout for app after auth */}
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/expenses" element={<ExpensesPage />} />
             <Route path="/budget" element={<BudgetPage />} />
             <Route path="/savings" element={<SavingsPage />} />
@@ -60,11 +65,11 @@ const AppRoutes: React.FC = () => {
             <Route path="/financial-advice" element={<FinancialAdviceListPage />} />
             <Route path="/financial-advice/:id" element={<FinancialAdviceDetailPage />} />
             <Route path="/financial-advice/new" element={<GenerateAdvicePage />} />
+            <Route path="/community-savings" element={<CommunitySavingsPage />} />
           </Route>
         </Route>
         
-        {/* Initial route redirects to splash */}
-        <Route path="" element={<Navigate to="/splash" replace />} />
+        {/* Legacy initial route redirect left as no-op since '/' is landing */}
         
         {/* Catch-all route for 404 */}
         <Route path="*" element={<NotFoundPage />} />

@@ -52,7 +52,10 @@ const BudgetOverview: React.FC<BudgetOverviewProps> = ({
           ></div>
         </div>
       </div>
-      <EventForm onSubmit={()=>{}}/>
+      <EventForm 
+        onSubmit={() => {}} 
+        onCancel={() => {}}
+      />
       <div className="space-y-3">
         {budgets.map((budget) => (
           <div key={budget.category}>
